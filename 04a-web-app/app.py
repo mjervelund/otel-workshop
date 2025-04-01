@@ -47,8 +47,8 @@ def get_settings():
             Select(
                 id="Model",
                 label="OpenAI - Model",
-                values=["eurpry-gpt35-turbo","eupry-gpt4-turbo", "eupry-gpt-4", "eupry-gpt4-32k"],
-                initial_index=1,
+                values=["gpt-4o"],
+                initial_index=0,
             ),
             Switch(id="Streaming", label="OpenAI - Stream Tokens", initial=True),
             Slider(

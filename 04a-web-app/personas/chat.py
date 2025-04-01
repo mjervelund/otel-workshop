@@ -5,9 +5,7 @@ from langchain.callbacks.openai_info import OpenAICallbackHandler
 from langchain.agents.structured_chat.prompt import SUFFIX
 from langchain_core.output_parsers import StrOutputParser
 from langchain.chains import ConversationChain
-from langchain.agents import AgentExecutor, AgentType, initialize_agent
 from langchain_openai import AzureChatOpenAI
-from langchain.memory import ConversationBufferMemory
 
 from personas.persona import Persona
 

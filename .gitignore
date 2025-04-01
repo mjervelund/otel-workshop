@@ -1,0 +1,10 @@
+03a/.chainlit/*
+sqlite3.db
+03a/__pycache__/app.cpython-311.pyc
+03a/.cache/41/cache.db
+**/.env
+.venv/*
+04a-web-app/data/*
+04a-web-app/personas/__pycache__/*
+04a-web-app/__pycache__/*
+04a-web-app/record_manager_cache.sql

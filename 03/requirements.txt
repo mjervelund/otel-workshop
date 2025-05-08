@@ -1,8 +1,8 @@
-azure-monitor-opentelemetry
-Faker
 fastapi
 uvicorn
 sqlalchemy
 databases
 pydantic
-db-sqlite3
+pydantic-settings
+sqlite3
+dotenv

@@ -1,0 +1,5 @@
+[
+    { "title": "The Pragmatic Programmer",   "author": "Hunt & Thomas" },
+    { "title": "Clean Code",                 "author": "Robert C. Martin" },
+    { "title": "Design Patterns",            "author": "Gamma et al." }
+  ]

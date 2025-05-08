@@ -8,3 +8,6 @@ sqlite3.db
 04a-web-app/personas/__pycache__/*
 04a-web-app/__pycache__/*
 04a-web-app/record_manager_cache.sql
+03/app/__pycache__/*
+03/library.db
+03/app/routers/__pycache__/books.cpython-311.pyc

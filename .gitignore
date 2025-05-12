@@ -10,4 +10,8 @@ sqlite3.db
 04a-web-app/record_manager_cache.sql
 03/app/__pycache__/*
 03/library.db
-03/app/routers/__pycache__/books.cpython-311.pyc
+03/app/routers/__pycache__/*
+04/.chainlit/*
+04/record_manager_cache.sql
+04/__pycache__/app.cpython-311.pyc
+04/.files/80445301-ef81-45ec-8497-d87dd0614054/9821ee87-1a92-47ab-a415-0d976d579000.txt

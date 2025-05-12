@@ -1,9 +1,0 @@
-azure-identity
-azure-monitor-opentelemetry
-chainlit == 1.0.506
-langchain == 0.1.14
-langchain-community == 0.0.32
-langchain-openai == 0.1.1
-langchain-chroma
-unstructured
-markdown

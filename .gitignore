@@ -1,6 +1,6 @@
 03a/.chainlit/*
 sqlite3.db
-03a/__pycache__/app.cpython-311.pyc
+03a/__pycache__/*
 03a/.cache/41/cache.db
 **/.env
 .venv/*
@@ -13,5 +13,5 @@ sqlite3.db
 03/app/routers/__pycache__/*
 04/.chainlit/*
 04/record_manager_cache.sql
-04/__pycache__/app.cpython-311.pyc
-04/.files/80445301-ef81-45ec-8497-d87dd0614054/9821ee87-1a92-47ab-a415-0d976d579000.txt
+04/__pycache__/*
+04/.files/*

@@ -31,7 +31,7 @@ resource azureOpenAI_gpt_4o 'Microsoft.CognitiveServices/accounts/deployments@20
   name: 'gpt-4o'
   sku: {
     name: 'GlobalStandard'
-    capacity: 100
+    capacity: 50
   }
   properties: {
     model: {
@@ -40,7 +40,7 @@ resource azureOpenAI_gpt_4o 'Microsoft.CognitiveServices/accounts/deployments@20
       version: '2024-11-20'
     }
     versionUpgradeOption: 'OnceNewDefaultVersionAvailable'
-    currentCapacity: 100
+    currentCapacity: 50
     raiPolicyName: 'Microsoft.DefaultV2'
   }
 }

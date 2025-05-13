@@ -11,6 +11,10 @@ $Location = "swedencentral"
 
 $ResourceGroupName = "rg-obersvabilityworkshop-dev"
 
+az group create `
+    --name $ResourceGroupName `
+    --location $Location
+
 az deployment group create `
     --name "ObservabilityWorkshop${Timestamp}" `
     --mode "Complete" `

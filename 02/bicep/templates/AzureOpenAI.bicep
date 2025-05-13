@@ -68,5 +68,7 @@ resource azureOpenAI_embedding 'Microsoft.CognitiveServices/accounts/deployments
     currentCapacity: embeddingCapacity
     raiPolicyName: 'Microsoft.DefaultV2'
   }
-  dependsOn: [ azureOpenAI_gpt_4o ] // To avoid deployment conflicts by making the model deployments sequential
+  dependsOn: [
+    azureOpenAI_gpt_4o
+  ]
 }

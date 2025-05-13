@@ -49,7 +49,7 @@ resource azureOpenAI_gpt_35_turbo 'Microsoft.CognitiveServices/accounts/deployme
   parent: azureOpenAI
   name: 'gpt-35-turbo'
   sku: {
-    name: 'GlobalStandard'
+    name: 'Standard'
     capacity: 50
   }
   properties: {

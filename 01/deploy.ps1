@@ -9,7 +9,9 @@ $SystemName = "msows${UserInitials}"
 $Environment = "dev"
 $Location = "swedencentral"
 
-$ResourceGroupName = "rg-obersvabilityworkshop-dev"
+$ResourceGroupName = "rg-observabilityworkshop-dev"
+
+az group create --name $ResourceGroupName --location $Location
 
 az deployment group create `
     --name "ObservabilityWorkshop${Timestamp}" `

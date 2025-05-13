@@ -62,4 +62,7 @@ resource azureOpenAI_embedding 'Microsoft.CognitiveServices/accounts/deployments
     currentCapacity: 150
     raiPolicyName: 'Microsoft.DefaultV2'
   }
+  dependsOn: [
+    azureOpenAI_gpt_4o
+  ]
 }

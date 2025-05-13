@@ -47,6 +47,28 @@ resource azureOpenAI_gpt_4o 'Microsoft.CognitiveServices/accounts/deployments@20
   }
 }
 
+resource azureOpenAI_gpt_35_turbo 'Microsoft.CognitiveServices/accounts/deployments@2024-10-01' = {
+  parent: azureOpenAI
+  name: 'gpt-35-turbo'
+  sku: {
+    name: 'GlobalStandard'
+    capacity: 50
+  }
+  properties: {
+    model: {
+      format: 'OpenAI'
+      name: 'gpt-35-turbo'
+      version: '0125'
+    }
+    versionUpgradeOption: 'OnceNewDefaultVersionAvailable'
+    currentCapacity: 50
+    raiPolicyName: 'Microsoft.DefaultV2'
+  }
+  dependsOn: [
+    azureOpenAI_gpt_4o
+  ]
+}
+
 resource azureOpenAI_embedding 'Microsoft.CognitiveServices/accounts/deployments@2024-10-01' = {
   parent: azureOpenAI
   name: 'embedding'
@@ -66,6 +88,7 @@ resource azureOpenAI_embedding 'Microsoft.CognitiveServices/accounts/deployments
   }
   dependsOn: [
     azureOpenAI_gpt_4o
+    azureOpenAI_gpt_35_turbo
   ]
 }
 

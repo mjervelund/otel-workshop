@@ -1,5 +1,6 @@
 Param(
-    [Parameter(Mandatory, HelpMessage="User initials (max length 4) to use in resource names")][string]$UserInitials
+    [Parameter(Mandatory, HelpMessage="User initials (max length 4) to use in resource names")][string]$UserInitials,
+    [Parameter(HelpMessage="Lowers the capacity for OpenAI models in case the subscription has low quota")][switch]$LowOpenAiCapacity
 )
 
 $Timestamp = Get-Date -Format "yyMMddHHmmss"
@@ -9,7 +10,7 @@ $SystemName = "msows${UserInitials}"
 $Environment = "dev"
 $Location = "swedencentral"
 
-$ResourceGroupName = "rg-obersvabilityworkshop-dev"
+$ResourceGroupName = "rg-observabilityworkshop-dev"
 
 az group create `
     --name $ResourceGroupName `
@@ -24,4 +25,5 @@ az deployment group create `
         env=$Environment `
         systemName=$SystemName `
         location=$Location `
-        deploymentSuffix=$Timestamp
+        deploymentSuffix=$Timestamp `
+        lowOpenAiCapacity=$LowOpenAiCapacity

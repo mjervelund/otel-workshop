@@ -15,6 +15,9 @@ param location string = resourceGroup().location
 
 param deploymentSuffix string = '' // Recommended suffix is a timestamp in yyMMddHHmm format or build ID
 
+@description('Lowers the capacity for OpenAI models in case the subscription has low quota')
+param lowOpenAiCapacity bool = false
+
 module resourceNames 'config/resourceNames.bicep' = {
   name: 'resourceNames'
 
@@ -87,5 +90,6 @@ module azureOpenAI 'templates/azureOpenAI.bicep' = {
   params: {
     openAiName: 'oai-${systemName}-${env}'
     location: location
+    lowCapacity: lowOpenAiCapacity
   }
 }

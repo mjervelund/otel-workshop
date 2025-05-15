@@ -7,6 +7,12 @@ param location string = resourceGroup().location
 @description('The pricing tier of the OpenAI service')
 param skuName string = 'S0'
 
+@description('Lowers the capacity for OpenAI models in case the subscription has low quota')
+param lowCapacity bool = false
+
+var gptCapacity = lowCapacity ? 50 : 100
+var embeddingCapacity = lowCapacity ? 50 : 150
+
 resource azureOpenAI 'Microsoft.CognitiveServices/accounts@2024-10-01' = {
   name: openAiName
   location: location
@@ -31,7 +37,7 @@ resource azureOpenAI_gpt_4o 'Microsoft.CognitiveServices/accounts/deployments@20
   name: 'gpt-4o'
   sku: {
     name: 'GlobalStandard'
-    capacity: 50
+    capacity: gptCapacity
   }
   properties: {
     model: {
@@ -40,7 +46,7 @@ resource azureOpenAI_gpt_4o 'Microsoft.CognitiveServices/accounts/deployments@20
       version: '2024-11-20'
     }
     versionUpgradeOption: 'OnceNewDefaultVersionAvailable'
-    currentCapacity: 50
+    currentCapacity: gptCapacity
     raiPolicyName: 'Microsoft.DefaultV2'
   }
 }
@@ -73,7 +79,7 @@ resource azureOpenAI_embedding 'Microsoft.CognitiveServices/accounts/deployments
   name: 'embedding'
   sku: {
     name: 'GlobalStandard'
-    capacity: 150
+    capacity: embeddingCapacity
   }
   properties: {
     model: {
@@ -82,7 +88,7 @@ resource azureOpenAI_embedding 'Microsoft.CognitiveServices/accounts/deployments
       version: '1'
     }
     versionUpgradeOption: 'NoAutoUpgrade'
-    currentCapacity: 150
+    currentCapacity: embeddingCapacity
     raiPolicyName: 'Microsoft.DefaultV2'
   }
   dependsOn: [

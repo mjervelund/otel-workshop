@@ -9,7 +9,7 @@ $SystemName = "msows${UserInitials}"
 $Environment = "dev"
 $Location = "swedencentral"
 
-$ResourceGroupName = "rg-obersvabilityworkshop-dev"
+$ResourceGroupName = "rg-observabilityworkshop-dev"
 
 az deployment group what-if `
     --name "ObservabilityWorkshop${Timestamp}" `
